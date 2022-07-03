@@ -1,4 +1,5 @@
-export default function Home(props) {
+export default function Home({web}) {
+  console.log(web.dblink[0].items[2].About.title)
   return (
     <>
       <div>
@@ -8,7 +9,7 @@ export default function Home(props) {
         >
           <div className="container">
             <a className="navbar-brand" href="#page-top">
-              Yusron-app
+            {web.dblink[0].items[0].logo.nama_logo}
             </a>
             <button
               className="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded"
@@ -27,25 +28,25 @@ export default function Home(props) {
                 <li className="nav-item mx-0 mx-lg-1">
                   <a
                     className="nav-link py-3 px-0 px-lg-3 rounded"
-                    href="#portfolio"
+                    href={web.dblink[0].items[1].portfolio.link}
                   >
-                    Portfolio
+                    {web.dblink[0].items[1].portfolio.title}
                   </a>
                 </li>
                 <li className="nav-item mx-0 mx-lg-1">
                   <a
                     className="nav-link py-3 px-0 px-lg-3 rounded"
-                    href="#about"
+                    href={web.dblink[0].items[2].About.link}
                   >
-                    About
+                    {web.dblink[0].items[2].About.title}
                   </a>
                 </li>
                 <li className="nav-item mx-0 mx-lg-1">
                   <a
                     className="nav-link py-3 px-0 px-lg-3 rounded"
-                    href="#contact"
+                    href={web.dblink[0].items[3].contact.link}
                   >
-                    Contact
+                    {web.dblink[0].items[3].contact.title}
                   </a>
                 </li>
               </ul>
@@ -58,12 +59,12 @@ export default function Home(props) {
             {/* Masthead Avatar Image*/}
             <img
               className="masthead-avatar mb-5"
-              src="assets/img/portfolio/yusroon.png"
+              src={web.dblink[1].center.img}
               alt="..."
             />
             {/* Masthead Heading*/}
             <h1 className="masthead-heading text-uppercase mb-0">
-              Mokhamad Yusron
+              {web.dblink[1].center.title}
             </h1>
             {/* Icon Divider*/}
             <div className="divider-custom divider-light">
@@ -75,7 +76,7 @@ export default function Home(props) {
             </div>
             {/* Masthead Subheading*/}
             <p className="masthead-subheading font-weight-light mb-0">
-              I am web developer
+            {web.dblink[1].center.subtitle}
             </p>
           </div>
         </header>
@@ -84,7 +85,7 @@ export default function Home(props) {
         <section className="page-section portfolio" id="portfolio">
           <div className="container">
             <h2 className="page-section-heading text-center text-uppercase text-secondary mb-0">
-              Portfolio
+            {web.dblink[0].items[1].portfolio.title}
             </h2>
             <div className="divider-custom">
               <div className="divider-custom-line" />
@@ -107,7 +108,7 @@ export default function Home(props) {
                   </div>
                   <img
                     className="img-fluid"
-                    src="assets/img/portfolio/awan.png"
+                    src={web.dblink[2].items[0].img}
                     alt="..."
                   />
                 </div>
@@ -125,7 +126,7 @@ export default function Home(props) {
                   </div>
                   <img
                     className="img-fluid"
-                    src="assets/img/portfolio/vintage.png"
+                    src={web.dblink[2].items[1].img}
                     alt="..."
                   />
                 </div>
@@ -143,7 +144,7 @@ export default function Home(props) {
                   </div>
                   <img
                     className="img-fluid"
-                    src="assets/img/portfolio/sendja.png"
+                    src={web.dblink[2].items[2].img}
                     alt="..."
                   />
                 </div>
@@ -161,7 +162,7 @@ export default function Home(props) {
                   </div>
                   <img
                     className="img-fluid"
-                    src="assets/img/portfolio/daun.png"
+                    src={web.dblink[2].items[3].img}
                     alt="..."
                   />
                 </div>
@@ -179,7 +180,7 @@ export default function Home(props) {
                   </div>
                   <img
                     className="img-fluid"
-                    src="assets/img/portfolio/persawahan.png"
+                    src={web.dblink[2].items[4].img}
                     alt="..."
                   />
                 </div>
@@ -197,7 +198,7 @@ export default function Home(props) {
                   </div>
                   <img
                     className="img-fluid"
-                    src="assets/img/portfolio/_Lapangan Belakang_.png"
+                    src={web.dblink[2].items[5].img}
                     alt="..."
                   />
                 </div>
@@ -210,154 +211,13 @@ export default function Home(props) {
           <div className="container">
             {/* About Section Heading*/}
             <h2 className="page-section-heading text-center text-uppercase text-white">
-              About
+            {web.dblink[0].items[2].About.title}
             </h2>
             {/* About Section Button*/}
             <div className="text-center mt-4">
               <p className="lead mb-0">
-                I'm Mokhamad Yusron, a student at STIKOM Pgri majoring in
-                Informatics Engineering. Besides that, I'm currently working as
-                a freelancer as a web developer.
+              {web.dblink[3].text}
               </p>
-            </div>
-          </div>
-        </section>
-        <section className="page-section" id="contact">
-          <div className="container">
-            {/* Contact Section Heading*/}
-            <h2 className="page-section-heading text-center text-uppercase text-secondary mb-0">
-              Contact Me
-            </h2>
-            {/* Icon Divider*/}
-            <div className="divider-custom">
-              <div className="divider-custom-line" />
-              <div className="divider-custom-icon">
-                <i className="fas fa-star" />
-              </div>
-              <div className="divider-custom-line" />
-            </div>
-            {/* Contact Section Form*/}
-            <div className="row justify-content-center">
-              <div className="col-lg-8 col-xl-7">
-                {/* * * * * * * * * * * * * * * **/}
-                {/* * * SB Forms Contact Form * **/}
-                {/* * * * * * * * * * * * * * * **/}
-                {/* This form is pre-integrated with SB Forms.*/}
-                {/* To make this form functional, sign up at*/}
-                {/* https://startbootstrap.com/solution/contact-forms*/}
-                {/* to get an API token!*/}
-                <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-                  {/* Name input*/}
-                  <div className="form-floating mb-3">
-                    <input
-                      className="form-control"
-                      id="name"
-                      type="text"
-                      placeholder="Enter your name..."
-                      data-sb-validations="required"
-                    />
-                    <label htmlFor="name">Full name</label>
-                    <div
-                      className="invalid-feedback"
-                      data-sb-feedback="name:required"
-                    >
-                      A name is required.
-                    </div>
-                  </div>
-                  {/* Email address input*/}
-                  <div className="form-floating mb-3">
-                    <input
-                      className="form-control"
-                      id="email"
-                      type="email"
-                      placeholder="name@example.com"
-                      data-sb-validations="required,email"
-                    />
-                    <label htmlFor="email">Email address</label>
-                    <div
-                      className="invalid-feedback"
-                      data-sb-feedback="email:required"
-                    >
-                      An email is required.
-                    </div>
-                    <div
-                      className="invalid-feedback"
-                      data-sb-feedback="email:email"
-                    >
-                      Email is not valid.
-                    </div>
-                  </div>
-                  {/* Phone number input*/}
-                  <div className="form-floating mb-3">
-                    <input
-                      className="form-control"
-                      id="phone"
-                      type="tel"
-                      placeholder="(123) 456-7890"
-                      data-sb-validations="required"
-                    />
-                    <label htmlFor="phone">Phone number</label>
-                    <div
-                      className="invalid-feedback"
-                      data-sb-feedback="phone:required"
-                    >
-                      A phone number is required.
-                    </div>
-                  </div>
-                  {/* Message input*/}
-                  <div className="form-floating mb-3">
-                    <textarea
-                      className="form-control"
-                      id="message"
-                      type="text"
-                      placeholder="Enter your message here..."
-                      style={{ height: "10rem" }}
-                      data-sb-validations="required"
-                      defaultValue={""}
-                    />
-                    <label htmlFor="message">Message</label>
-                    <div
-                      className="invalid-feedback"
-                      data-sb-feedback="message:required"
-                    >
-                      A message is required.
-                    </div>
-                  </div>
-                  {/* Submit success message*/}
-                  {/**/}
-                  {/* This is what your users will see when the form*/}
-                  {/* has successfully submitted*/}
-                  <div className="d-none" id="submitSuccessMessage">
-                    <div className="text-center mb-3">
-                      <div className="fw-bolder">
-                        Form submission successful!
-                      </div>
-                      To activate this form, sign up at
-                      <br />
-                      <a href="https://startbootstrap.com/solution/contact-forms">
-                        https://startbootstrap.com/solution/contact-forms
-                      </a>
-                    </div>
-                  </div>
-                  {/* Submit error message*/}
-                  {/**/}
-                  {/* This is what your users will see when there is*/}
-                  {/* an error submitting the form*/}
-                  <div className="d-none" id="submitErrorMessage">
-                    <div className="text-center text-danger mb-3">
-                      Error sending message!
-                    </div>
-                  </div>
-                  {/* Submit Button*/}
-                  <button
-                    className="btn btn-primary btn-xl disabled"
-                    id="submitButton"
-                    type="submit"
-                  >
-                    Send
-                  </button>
-                </form>
-              </div>
             </div>
           </div>
         </section>
@@ -369,9 +229,7 @@ export default function Home(props) {
               <div className="col-lg-4 mb-5 mb-lg-0">
                 <h4 className="text-uppercase mb-4">Location</h4>
                 <p className="lead mb-0">
-                  Banyuwangi,Jawa Timur
-                  <br />
-                  Pesanggaran, NO E18
+                {web.dblink[4].location}
                 </p>
               </div>
               {/* Footer Social Icons*/}
@@ -398,11 +256,9 @@ export default function Home(props) {
               </div>
               {/* Footer About Text*/}
               <div className="col-lg-4">
-                <h4 className="text-uppercase mb-4">About</h4>
+                <h4 className="text-uppercase mb-4"> {web.dblink[0].items[2].About.title}</h4>
                 <p className="lead mb-0">
-                  I'm Mokhamad Yusron, a student at STIKOM Pgri majoring in
-                  Informatics Engineering. Besides that, I'm currently working
-                  as a freelancer as a web developer.
+                {web.dblink[3].text}
                 </p>
               </div>
             </div>
@@ -794,11 +650,13 @@ export default function Home(props) {
   );
 }
 
-// export async function getServerSideProps(context) {
-//   const resp = await fetch("");
-//   const hasil = await resp.json();
-
-//   return {
-//     props: { hasil }, // will be passed to the page component as props
-//   };
-// }
+export async function getServerSideProps(context) {
+  const linkDb = "https://databaseyusron.herokuapp.com/";
+  const dataResponse = await fetch(linkDb);
+  const mydata = await dataResponse.json();
+  return {
+    props: {
+      web: mydata,
+    },
+  };
+}
