@@ -41,14 +41,6 @@ export default function Home({web}) {
                     {web.dblink[0].items[2].About.title}
                   </a>
                 </li>
-                <li className="nav-item mx-0 mx-lg-1">
-                  <a
-                    className="nav-link py-3 px-0 px-lg-3 rounded"
-                    href={web.dblink[0].items[3].contact.link}
-                  >
-                    {web.dblink[0].items[3].contact.title}
-                  </a>
-                </li>
               </ul>
             </div>
           </div>
